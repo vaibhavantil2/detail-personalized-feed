@@ -263,7 +263,7 @@ class RenderReviewListNode(ReviewListNode):
             qs = self.get_queryset(context)
             context_dict = context.flatten()
             context_dict['review_list'] = self.get_context_value_from_queryset(context, qs)
-            context_dict['rating_choices'] = REVIEW_RATING_CHOICES
+            context_dict['product_feedback'] = context.PRODUCT_REVIEW
             liststr = render_to_string(template_search_list, context_dict)
             return liststr
         else:
