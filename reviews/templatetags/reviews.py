@@ -311,7 +311,7 @@ class RenderRatingAverageNode(RatingAverageNode):
             qs = self.get_queryset(context)
             count = qs.count()
             context_dict = context.flatten()
-            context_dict['rating_choices'] = REVIEW_RATING_CHOICES
+            context_dict['average_ra'] = REVIEW_RATING_CHOICES
             context_dict['show_rating_text'] = SHOW_RATING_TEXT
             context_dict['review_count'] = count
             if count > 0:
@@ -369,7 +369,7 @@ def get_review_list(parser, token):
     Syntax::
 
         {% get_review_list for [object] as [varname]  %}
-        {% get_review_list for [app].[model] [object_id] as [varname]  %}
+        {% get_product_review_feedback_list for [app].[model] [object_id] as [varname]  %}
 
     Example usage::
 
