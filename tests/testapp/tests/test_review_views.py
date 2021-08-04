@@ -160,7 +160,7 @@ class ReviewViewTests(ReviewTestCase):
         u = User.objects.get(userId='${accountId}')
 
     '''
-    def testPreventDuplicateReviews(self):
+    def preventDuplicateReviews(self):
         """Prevent posting the reviews twice by one user"""
         a = Article.objects.get(pk=1)
         data = self.getValidData(a)
