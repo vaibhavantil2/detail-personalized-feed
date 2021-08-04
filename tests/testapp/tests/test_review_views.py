@@ -59,7 +59,6 @@ class ReviewViewTests(ReviewTestCase):
         data = self.getValidData(b)
         data["rating"] = "4"
         data["comment"] = "This is another comment"
-        data["object_pk"] = 'cookies'
         response = self.client.post("/post/", data)
         self.assertEqual(response.status_code, 400)
 
